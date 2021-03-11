@@ -1,24 +1,57 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import { Form, Header } from './styledApp';
+import ProgressBar from './components/progress-bar/index';
+import DadosPessoais from './pages/dados-pessoais';
+import DadosAcademicos from './pages/dados-academicos';
+import DadosProfissionais from './pages/dados-profissionais';
 
-function App() {
+const App = () => {
+
+  const [form, setForm] = useState(0);
+  const [line, setLine] = useState('');
+  const [line1, setLine1] = useState('');
+  const [line2, setLine2] = useState('');
+  const [ball, setBall] = useState('ball');
+  const [ball1, setBall1] = useState('ball');
+  const [ball2, setBall2] = useState('ball');
+  const [nome, setNome] = useState('');
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Header>
+        <h1>Formulário de cadastro</h1>
+      </Header>
+      <Form>
+        <div className="title">
+          <h1>Trabalhe Conosco</h1>
+          <p>Cadastre seu currículo e participe das nossas seleções!</p>
+        </div>
+        <div className="dados">
+          <h1>Dados pessoais</h1>
+          <h1>Dados acadêmicos</h1>
+          <h1>Dados profissionáis</h1>
+          <h1>Cadastrado</h1>
+        </div>
+        <ProgressBar line={line} line1={line1} line2={line2} ball={ball} ball1={ball1} ball2={ball2} >
+        </ProgressBar>
+        {form === 0 &&
+          <DadosPessoais setNome={setNome} setForm={setForm} setLine={setLine} setBall={setBall} />
+        }
+        {form === 1 &&
+          <DadosAcademicos setForm={setForm} setLine={setLine} setBall={setBall} setLine1={setLine1} setBall1={setBall1} />
+        }
+        {form === 2 &&
+          <DadosProfissionais setForm={setForm} setLine1={setLine1} setBall1={setBall1} setLine2={setLine2} setBall2={setBall2} />
+        }
+        {form === 3 &&
+          <div className="cadastrado">
+            <h1>{`Parabéns ${nome} !`}</h1>
+            <p>Seus dados foram cadastrados com sucesso, agora é com a empresa.</p>
+            <p>Boa sorte!</p>
+          </div>
+        }
+      </Form>
+    </>
   );
 }
 
