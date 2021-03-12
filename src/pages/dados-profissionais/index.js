@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-const DadosProfissionais = ({ setForm, setLine1, setLine2, setBall1, setBall2 }) => {
+const DadosProfissionais = ({ setForm, setLine1, setLine2, setBall1, setBall2, setId }) => {
 
   const [valueEmpresa, setValueEmpresa] = useState('');
   const [errorEmpresa, setErrorEmpresa] = useState(false);
@@ -186,6 +186,9 @@ const DadosProfissionais = ({ setForm, setLine1, setLine2, setBall1, setBall2 })
       setBall1('ballGreen');
       setLine2('lineColor');
       setBall2('ballColor');
+      setTimeout(()=>{
+        setId('');
+      }, 1000);
     }
     else {
       setForm(2);

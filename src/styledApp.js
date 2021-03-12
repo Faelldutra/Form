@@ -25,6 +25,10 @@ width: 100%;
 padding-top: 2%;
 background: #F0F8FF;
 
+@media(min-width: 450px){
+  height: 900px;
+}
+
 .title{
   display: flex;
   flex-direction: column;
@@ -260,4 +264,22 @@ background: #F0F8FF;
         }
       }
     }
+    #cadastrado{
+      display: none;
+    }
 ` 
+export const Footer = styled.div`
+  display: flex;
+  width: 100%;
+  height: 50px;
+  background: #87CEFA;
+  opacity: .8;
+
+  h1{
+    font-size: 1.2rem;
+    color: white;
+    font-family: 'arial' sans-serif;
+    margin: auto;
+  }
+
+`

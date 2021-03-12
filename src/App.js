@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Form, Header } from './styledApp';
+import { Footer, Form, Header } from './styledApp';
 import ProgressBar from './components/progress-bar/index';
 import DadosPessoais from './pages/dados-pessoais';
 import DadosAcademicos from './pages/dados-academicos';
@@ -15,6 +15,7 @@ const App = () => {
   const [ball1, setBall1] = useState('ball');
   const [ball2, setBall2] = useState('ball');
   const [nome, setNome] = useState('');
+  const [id, setId] = useState('cadastrado');
 
   return (
     <>
@@ -41,16 +42,19 @@ const App = () => {
           <DadosAcademicos setForm={setForm} setLine={setLine} setBall={setBall} setLine1={setLine1} setBall1={setBall1} />
         }
         {form === 2 &&
-          <DadosProfissionais setForm={setForm} setLine1={setLine1} setBall1={setBall1} setLine2={setLine2} setBall2={setBall2} />
+          <DadosProfissionais setForm={setForm} setLine1={setLine1} setBall1={setBall1} setLine2={setLine2} setBall2={setBall2} setId={setId} />
         }
         {form === 3 &&
-          <div className="cadastrado">
+          <div id={id} className="cadastrado">
             <h1>{`Parabéns ${nome} !`}</h1>
             <p>Seus dados foram cadastrados com sucesso, agora é com a empresa.</p>
             <p>Boa sorte!</p>
           </div>
         }
       </Form>
+      <Footer>
+        <h1>Rafael Dutra &copy; 2021</h1>
+      </Footer>
     </>
   );
 }
