@@ -206,14 +206,14 @@ const DadosProfissionais = ({ setForm, setLine1, setLine2, setBall1, setBall2, s
         <div className="configForm">
           <label>
             <p>Empresa:</p>
-            <input onChange={(e) => setValueEmpresa(e.target.value)} className={errorEmpresa ? 'input' : ''} maxLength="50" name="empresa" type="text" placeholder="Ex: Goodyear"></input>
+            <input value={valueEmpresa} onChange={(e) => setValueEmpresa(e.target.value)} className={errorEmpresa ? 'input' : ''} maxLength="50" name="empresa" type="text" placeholder="Ex: Goodyear"></input>
             {errorEmpresa &&
               <p className="error">{errorEmpresa}</p>
             }
           </label>
           <label>
             <p>Cargo:</p>
-            <input onChange={(e) => setValueCargo(e.target.value)} className={errorCargo ? 'input' : ''} maxLength="50" name="cargo" type="text" placeholder="Ex: Auxiliar administrativo"></input>
+            <input value={valueCargo} onChange={(e) => setValueCargo(e.target.value)} className={errorCargo ? 'input' : ''} maxLength="50" name="cargo" type="text" placeholder="Ex: Auxiliar administrativo"></input>
             {errorCargo &&
               <p className="error">{errorCargo}</p>
             }
@@ -222,7 +222,7 @@ const DadosProfissionais = ({ setForm, setLine1, setLine2, setBall1, setBall2, s
         <div className="configForm">
           <label>
             <p>Trabalho atual</p>
-            <select onChange={(e) => setValueTrabalhoAtual(e.target.value)} id="select" className={errorTrabalhoAtual ? 'input' : ''} name="trabalhoAtual">
+            <select value={valueTrabalhoAtual} onChange={(e) => setValueTrabalhoAtual(e.target.value)} id="select" className={errorTrabalhoAtual ? 'input' : ''} name="trabalhoAtual">
               <option></option>
               <option value="sim">Sim</option>
               <option value="nao">Não</option>
@@ -233,7 +233,7 @@ const DadosProfissionais = ({ setForm, setLine1, setLine2, setBall1, setBall2, s
           </label>
           <label>
             <p>Data de início:</p>
-            <input onChange={(e) => setValueDataInicio(e.target.value)} className={errorDataInicio ? 'input' : ''} name="dataInicio" type="date"></input>
+            <input value={valueDataInicio} onChange={(e) => setValueDataInicio(e.target.value)} className={errorDataInicio ? 'input' : ''} name="dataInicio" type="date"></input>
             {errorDataInicio &&
               <p className="error">{errorDataInicio}</p>
             }
@@ -241,7 +241,7 @@ const DadosProfissionais = ({ setForm, setLine1, setLine2, setBall1, setBall2, s
           {valueTrabalhoAtual === 'nao' &&
             <label>
               <p>Data de término:</p>
-              <input onChange={(e) => setValueDataTermino(e.target.value)} className={errorDataTermino ? 'input' : ''} name="dataTermino" type="date"></input>
+              <input value={valueDataTermino} onChange={(e) => setValueDataTermino(e.target.value)} className={errorDataTermino ? 'input' : ''} name="dataTermino" type="date"></input>
               {errorDataTermino &&
                 <p className="error">{errorDataTermino}</p>
               }
@@ -251,14 +251,14 @@ const DadosProfissionais = ({ setForm, setLine1, setLine2, setBall1, setBall2, s
         <div className="configForm">
           <label>
             <p>Cidade:</p>
-            <input onChange={(e) => setValueCidade(e.target.value)} className={errorCidade ? 'input' : ''} maxLength="30" name="cidade" type="text" placeholder="Ex: Americana"></input>
+            <input value={valueCidade} onChange={(e) => setValueCidade(e.target.value)} className={errorCidade ? 'input' : ''} maxLength="30" name="cidade" type="text" placeholder="Ex: Americana"></input>
             {errorCidade &&
               <p className="error">{errorCidade}</p>
             }
           </label>
           <label>
             <p>Estado:</p>
-            <input onChange={(e) => setValueEstado(e.target.value)} className={errorEstado ? 'input' : ''} maxLength="19" name="estado" type="text" placeholder="Ex: São Paulo"></input>
+            <input value={valueEstado} onChange={(e) => setValueEstado(e.target.value)} className={errorEstado ? 'input' : ''} maxLength="19" name="estado" type="text" placeholder="Ex: São Paulo"></input>
             {errorEstado &&
               <p className="error">{errorEstado}</p>
             }
@@ -267,15 +267,15 @@ const DadosProfissionais = ({ setForm, setLine1, setLine2, setBall1, setBall2, s
         <div className="configForm">
           <label>
             <p>Idioma:</p>
-            <input onChange={(e) => setValueIdioma(e.target.value)} className={errorIdioma ? 'input' : ''} maxLength="20" name="idioma" type="text" placeholder="Ex: inglês"></input>
+            <input value={valueIdioma} onChange={(e) => setValueIdioma(e.target.value)} className={errorIdioma ? 'input' : ''} maxLength="20" name="idioma" type="text" placeholder="Ex: inglês"></input>
             {errorIdioma &&
               <p className="error">{errorIdioma}</p>
             }
           </label>
           <label>
             <p>Nível:</p>
-            <select onChange={(e) => setValueNivel(e.target.value)} className={errorNivel ? 'input' : ''} name="nivel">
-              <option></option>
+            <select value={valueNivel} onChange={(e) => setValueNivel(e.target.value)} className={errorNivel ? 'input' : ''} name="nivel">
+              <option value=""></option>
               <option value="basico">Básico</option>
               <option value="intermediario">Intermediário</option>
               <option value="avancado">Avançado</option>

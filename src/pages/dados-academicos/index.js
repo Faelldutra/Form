@@ -180,24 +180,24 @@ const DadosAcademicos = ({ setForm, setLine, setLine1, setBall, setBall1 }) => {
         <div className="configForm">
           <label>
             <p>Formação:</p>
-            <input onChange={(e) => setValueFormacao(e.target.value)} className={errorFormacao ? 'input' : ''} name="formacao" maxLength="50" type="text" placeholder="Ex: Administração"></input>
+            <input value={valueFormacao} onChange={(e) => setValueFormacao(e.target.value)} className={errorFormacao ? 'input' : ''} name="formacao" maxLength="50" type="text" placeholder="Ex: Administração"></input>
             {errorFormacao &&
               <p className="error">{errorFormacao}</p>
             }
           </label>
           <label>
             <p>Tipo de formação:</p>
-            <select onChange={(e) => setValueTipoFormacao(e.target.value)} name="tipoDeFormacao" className={errorTipoFormacao ? 'input' : ''}>
-              <option></option>
-              <option>Técnico</option>
-              <option>Bacharelado</option>
-              <option>Licenciatura</option>
-              <option>Tecnólogo</option>
-              <option>Especialização</option>
-              <option>MBA</option>
-              <option>Mestrado</option>
-              <option>Doutorado</option>
-              <option>Pós-doutorado</option>
+            <select value={valueTipoFormação} onChange={(e) => setValueTipoFormacao(e.target.value)} name="tipoDeFormacao" className={errorTipoFormacao ? 'input' : ''}>
+              <option value=""></option>
+              <option value='tecnico'>Técnico</option>
+              <option value ="bacharelado">Bacharelado</option>
+              <option value="licenciatura">Licenciatura</option>
+              <option value="tecnologo">Tecnólogo</option>
+              <option value="especializacao">Especialização</option>
+              <option value="mba">MBA</option>
+              <option value="mestrado">Mestrado</option>
+              <option value="doutorado">Doutorado</option>
+              <option value="posdoutorado">Pós-doutorado</option>
             </select>
             {errorTipoFormacao &&
               <p className="error">{errorTipoFormacao}</p>
@@ -207,18 +207,18 @@ const DadosAcademicos = ({ setForm, setLine, setLine1, setBall, setBall1 }) => {
         <div className="configForm">
           <label>
             <p>Instituiçao de ensino:</p>
-            <input onChange={(e) => setValueInstituicao(e.target.value)} name="instituicaoEnsino" maxLength="50" type="text" placeholder="Ex: Unicamp" className={errorInstituicao ? 'input' : ''}></input>
+            <input value={valueInstituicao} onChange={(e) => setValueInstituicao(e.target.value)} name="instituicaoEnsino" maxLength="50" type="text" placeholder="Ex: Unicamp" className={errorInstituicao ? 'input' : ''}></input>
             {errorInstituicao &&
               <p className="error">{errorInstituicao}</p>
             }
           </label>
           <label>
             <p>Status:</p>
-            <select onChange={(e) => setValueStatus(e.target.value)} name="status" className={errorStatus ? 'input' : ''} >
-              <option></option>
-              <option>Incompleto</option>
-              <option>Completo</option>
-              <option>Trancado</option>
+            <select value={valueStatus} onChange={(e) => setValueStatus(e.target.value)} name="status" className={errorStatus ? 'input' : ''} >
+              <option value=""></option>
+              <option value="incompleto">Incompleto</option>
+              <option value="completo">Completo</option>
+              <option value="trancado">Trancado</option>
             </select>
             {errorStatus &&
               <p className="error">{errorStatus}</p>
@@ -228,14 +228,14 @@ const DadosAcademicos = ({ setForm, setLine, setLine1, setBall, setBall1 }) => {
         <div className="configForm">
           <label>
             <p>Data de início:</p>
-            <input onChange={(e) => setValueDataInicio(e.target.value)} id="configDate" name="dataInicio" type="date" className={errorDataInicio ? 'input' : ''}></input>
+            <input value={valueDataInicio} onChange={(e) => setValueDataInicio(e.target.value)} id="configDate" name="dataInicio" type="date" className={errorDataInicio ? 'input' : ''}></input>
             {errorDataInicio &&
               <p className="error">{errorDataInicio}</p>
             }
           </label>
           <label>
             <p>Data de termino:</p>
-            <input onChange={(e) => setValueDataTermino(e.target.value)} id="configDate" name="dataTermino" type="date" className={errorDataTermino ? 'input' : ''}></input>
+            <input value={valueDataTermino} onChange={(e) => setValueDataTermino(e.target.value)} id="configDate" name="dataTermino" type="date" className={errorDataTermino ? 'input' : ''}></input>
             {errorDataTermino &&
               <p className="error">{errorDataTermino}</p>
             }
@@ -244,21 +244,21 @@ const DadosAcademicos = ({ setForm, setLine, setLine1, setBall, setBall1 }) => {
         <div className="configForm">
           <label>
             <p>Cidade:</p>
-            <input onChange={(e) => setValueCidade(e.target.value)} name="cidade" maxLength="30" type="text" placeholder="Cidade..." className={errorCidade ? 'input' : ''}></input>
+            <input value={valueCidade} onChange={(e) => setValueCidade(e.target.value)} name="cidade" maxLength="30" type="text" placeholder="Cidade..." className={errorCidade ? 'input' : ''}></input>
             {errorCidade &&
               <p className="error">{errorCidade}</p>
             }
           </label>
           <label>
             <p>Estado:</p>
-            <input onChange={(e) => setValueEstado(e.target.value)} name="estado" maxLength="19" type="text" placeholder="Estado..." className={errorEstado ? 'input' : ''}></input>
+            <input value={valueEstado} onChange={(e) => setValueEstado(e.target.value)} name="estado" maxLength="19" type="text" placeholder="Estado..." className={errorEstado ? 'input' : ''}></input>
             {errorEstado &&
               <p className="error">{errorEstado}</p>
             }
           </label>
         </div>
         <div className="configButton">
-          <button type="button" onClick={() => backForm()} >Anterior</button>
+          <button type="button" onClick={() => backForm()}>Anterior</button>
           <button type="button" onClick={() => nextForm()}>Próximo</button>
         </div>
       </form>

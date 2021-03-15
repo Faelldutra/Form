@@ -29,7 +29,7 @@ const DadosPessoais = ({ setNome, setForm, setLine, setBall }) => {
   const [errorCidade, setErrorCidade] = useState(false);
   const [valueEstado, setValueEstado] = useState('');
   const [errorEstado, setErrorEstado] = useState(false);
-
+  
   function CPF(cpf) {
     cpf = cpf.replace(/\D/g, "")
     cpf = cpf.replace(/(\d{3})(\d)/, "$1.$2")
@@ -310,7 +310,7 @@ const DadosPessoais = ({ setNome, setForm, setLine, setBall }) => {
           </label>
           <label>
             <p>Sobrenome:</p>
-            <input onChange={(e) => setValueSobrenome(e.target.value)} className={errorSobrenome ? 'input' : ''} name="sobrenome" type="text" maxLength="40" placeholder="Sobrenome..."></input>
+            <input value={valueSobrenome} onChange={(e) => setValueSobrenome(e.target.value)} className={errorSobrenome ? 'input' : ''} name="sobrenome" type="text" maxLength="40" placeholder="Sobrenome..."></input>
             {errorSobrenome &&
               <p className="error">{errorSobrenome}</p>
             }
@@ -335,14 +335,14 @@ const DadosPessoais = ({ setNome, setForm, setLine, setBall }) => {
         <div className="configForm">
           <label>
             <p>E-mail:</p>
-            <input onChange={(e) => setValueEmail(e.target.value)} className={errorEmail ? 'input' : ''} name="email" maxLength="40" type="email" placeholder="E-mail..."></input>
+            <input value={valueEmail} onChange={(e) => setValueEmail(e.target.value)} className={errorEmail ? 'input' : ''} name="email" maxLength="40" type="email" placeholder="E-mail..."></input>
             {errorEmail &&
               <p className="error">{errorEmail}</p>
             }
           </label>
           <label>
             <p>Data de nascimento:</p>
-            <input onChange={(e) => setValueNascimento(e.target.value)} className={errorNascimento ? 'input' : ''} id="configDate" name="data" type="date"></input>
+            <input value={valueNascimento} onChange={(e) => setValueNascimento(e.target.value)} className={errorNascimento ? 'input' : ''} id="configDate" name="data" type="date"></input>
             {errorNascimento &&
               <p className="error">{errorNascimento}</p>
             }
@@ -351,7 +351,7 @@ const DadosPessoais = ({ setNome, setForm, setLine, setBall }) => {
         <div className="configForm">
           <label>
             <p>Genêro:</p>
-            <select onChange={(e) => setValueGenero(e.target.value)} className={errorGenero ? 'input' : ''} name="genero">
+            <select value={valueGenero} onChange={(e) => setValueGenero(e.target.value)} className={errorGenero ? 'input' : ''} name="genero">
               <option value=""></option>
               <option value="masculino">Masculino</option>
               <option value="feminino">Feminino</option>
@@ -363,7 +363,7 @@ const DadosPessoais = ({ setNome, setForm, setLine, setBall }) => {
           </label>
           <label>
             <p>Estado civil:</p>
-            <select onChange={(e) => setValueEstadoCivil(e.target.value)} className={errorEstadoCivil ? 'input' : ''} name="estadoCivil">
+            <select value={valueEstadoCivil} onChange={(e) => setValueEstadoCivil(e.target.value)} className={errorEstadoCivil ? 'input' : ''} name="estadoCivil">
               <option value=""></option>
               <option value="solteiro">Solteiro</option>
               <option value="casado">Casado</option>
@@ -379,14 +379,14 @@ const DadosPessoais = ({ setNome, setForm, setLine, setBall }) => {
         <div className="configForm">
           <label>
             <p>Endereço:</p>
-            <input onChange={(e) => setValueEndereco(e.target.value)} className={errorEndereco ? 'input' : ''} name="endereco" maxLength="40" type="text" placeholder="Rua..."></input>
+            <input value={valueEndereco} onChange={(e) => setValueEndereco(e.target.value)} className={errorEndereco ? 'input' : ''} name="endereco" maxLength="40" type="text" placeholder="Rua..."></input>
             {errorEndereco &&
               <p className="error">{errorEndereco}</p>
             }
           </label>
           <label>
             <p>Bairro:</p>
-            <input onChange={(e) => setValueBairro(e.target.value)} className={errorBairro ? 'input' : ''} name="bairro" maxLength="40" type="text" placeholder="Bairro..."></input>
+            <input value={valueBairro} onChange={(e) => setValueBairro(e.target.value)} className={errorBairro ? 'input' : ''} name="bairro" maxLength="40" type="text" placeholder="Bairro..."></input>
             {errorBairro &&
               <p className="error">{errorBairro}</p>
             }
@@ -395,28 +395,28 @@ const DadosPessoais = ({ setNome, setForm, setLine, setBall }) => {
         <div className="configForm">
           <label>
             <p>Numero:</p>
-            <input onChange={(e) => setValueNumero(e.target.value)} className={errorNumero ? 'input' : ''} name="numero" maxLength="10" type="text" placeholder="Numero..."></input>
+            <input value={valueNumero} onChange={(e) => setValueNumero(e.target.value)} className={errorNumero ? 'input' : ''} name="numero" maxLength="10" type="text" placeholder="Numero..."></input>
             {errorNumero &&
               <p className="error">{errorNumero}</p>
             }
           </label>
           <label>
             <p>Cidade:</p>
-            <input onChange={(e) => setValueCidade(e.target.value)} className={errorCidade ? 'input' : ''} name="cidade" maxLength="50" type="text" placeholder="Cidade..."></input>
+            <input value={valueCidade} onChange={(e) => setValueCidade(e.target.value)} className={errorCidade ? 'input' : ''} name="cidade" maxLength="50" type="text" placeholder="Cidade..."></input>
             {errorCidade &&
               <p className="error">{errorCidade}</p>
             }
           </label>
           <label>
             <p>Estado:</p>
-            <input onChange={(e) => setValueEstado(e.target.value)} className={errorEstado ? 'input' : ''} name="estado" maxLength="19" type="text" placeholder="Estado..."></input>
+            <input value={valueEstado} onChange={(e) => setValueEstado(e.target.value)} className={errorEstado ? 'input' : ''} name="estado" maxLength="19" type="text" placeholder="Estado..."></input>
             {errorEstado &&
               <p className="error">{errorEstado}</p>
             }
           </label>
         </div>
         <div className="configButton">
-          <button type="button" onClick={() => nextForm()} >Próximo</button>
+          <button type="button" onClick={() => nextForm()}>Próximo</button>
         </div>
       </form>
     </>
